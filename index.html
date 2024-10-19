@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="js/all.min.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Bookmark</title>
+</head>
+<body>
+    <div class="container bord pb-5">
+        <h1 class=" text-center mt-5 mb-5 p-5"> <span>"Bookmarker"</span></h1>
+        <div class="w-90 mx-auto gy-5">
+                <h2 class=" py-3 text-center"><i class="fa-solid fa-bookmark"></i> <b> Bookmark your favorite sites </b><i class="fa-solid fa-bookmark"></i></h2>
+                <div class="item mb-3">
+                    <label for="BookmarkName"><i class="fa-solid fa-book-bookmark mb-2"></i> <b>Site Name</b></label>
+                    <input oninput="validateSiteInput(this)" type="text" class="form-control" id="BookmarkName" placeholder="Bookmark Name" required>
+                    <div class="alert alert-danger p-1 mt-2 d-none">
+                        <small>"Bookmark name must start with an uppercase letter and contain at least 4 characters (letters and numbers)."</small>
+                    </div>
+                </div>
+                <div class="item mb-3">
+                    <label for="SiteURL"><i class="fa-solid fa-link mb-2"></i> <b>Site URL</b></label>
+                    <input oninput="validateSiteInput(this)" type="text" class="form-control" id="SiteURL" placeholder="Site URL" required>
+                    <div class="alert alert-danger p-1 mt-2 d-none">
+                        <small>"Please enter a valid site URL. It should be a proper URL starting with http or https."</small>
+                    </div>
+                </div>
+                <button id="submmitBtn" class=" btn btn-submit mx-auto px-5" onclick="addBookmark()" disabled>Sumbit</button>
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="row text-center bg-white p-1 gy-3">
+            <div class="col-3">Index</div>
+            <div class="col-3">Website Name</div>
+            <div class="col-3">Visit</div>
+            <div class="col-3">Delete</div>
+        </div>
+        <div class="row text-center bg-white p-1 gy-3">
+            <div class="col-3">Index</div>
+            <div class="col-3">Website Name</div>
+            <div class="col-3">Visit</div>
+            <div class="col-3">Delete</div>
+        </div>
+        <div class="row gy-4 p-4 bg-white" id="myData">
+            
+        </div>
+    </div> -->
+    <div class="container w-90 mt-4">
+        <table class=" w-100 text-center bg-white">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="myData">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
